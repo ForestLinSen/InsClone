@@ -42,7 +42,9 @@ struct ProfileActionButton: View {
                         )
                 })
                 
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                Button(action: {
+                    viewModel.checkIfUserFollowed()
+                }, label: {
                     Text("Message")
                         .font(.system(size: 14, weight: .semibold))
                         .frame(width: 172, height: 32, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
