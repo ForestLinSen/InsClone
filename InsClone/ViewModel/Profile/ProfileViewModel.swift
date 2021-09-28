@@ -8,16 +8,18 @@
 import SwiftUI
 
 class ProfileViewModel: ObservableObject{
-    let user: User
+    @Published var user: User
     
     init(user: User) {
         self.user = user
+        checkIfUserFollowed()
     }
     
     func follow(){
         
         guard let id = user.id else {return}
         UserService.follow(uid: id) { _ in
+            self.user.isFollowed = true
             print("Debug: follow button clicked")
         }
 
@@ -27,20 +29,21 @@ class ProfileViewModel: ObservableObject{
         
         guard let id = user.id else {return}
         UserService.unfollow(uid: id) { _ in
+            self.user.isFollowed = false
             print("Debug: unfollow button clicked")
         }
         
     }
     
     func checkIfUserFollowed(){
-
+        guard !user.isCurrentUser else{return}
         guard let id = user.id else {return}
         
         UserService.checkIfUserIsFollowed(uid: id) { result in
             if(result){
-                print("Debug: is following")
+                self.user.isFollowed = true
             }else{
-                print("Debug: not following")
+                self.user.isFollowed = false
             }
         }
 

@@ -25,19 +25,20 @@ struct UserService{
         guard let currentUserId = AuthViewModel.shared.userSession?.uid else {return}
         
         // delete the following document
-        Firestore.firestore().collection("following").document(uid)
-            .collection("user-following").document(uid).delete(){ _ in
+        Firestore.firestore().collection("following").document(currentUserId)
+            .collection("user-following").document(uid).delete{ _ in
                 
                 // delete the follower document
                 Firestore.firestore().collection("followers").document(uid)
                     .collection("user-followers").document(currentUserId).delete(completion: completion)
-                    }
+                
             }
+    }
     
     
     static func checkIfUserIsFollowed(uid: String, completion: @escaping ((Bool) -> Void)){
         guard let currentUserId = AuthViewModel.shared.userSession?.uid else{return}
- 
+        
         Firestore.firestore().collection("following").document(currentUserId)
             .collection("user-following").document(uid).getDocument(completion: { snapShot, _ in
                 
@@ -48,5 +49,5 @@ struct UserService{
                 }
             })
     }
-
+    
 }
