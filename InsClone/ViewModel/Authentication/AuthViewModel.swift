@@ -27,9 +27,7 @@ class AuthViewModel: ObservableObject{
             }else{
                 
                 guard let user = result?.user else {
-                    
                     print("Debug: cannot login with this user")
-                    
                     return
                 }
                 
@@ -67,7 +65,7 @@ class AuthViewModel: ObservableObject{
         
         print("Debug: begin to register user")
         
-        ImageUploader.uploadImage(image: image) { imageUrl in
+        ImageUploader.uploadImage(image: image, type: .profile) { imageUrl in
             
             print("Debug: user image uploaded")
             

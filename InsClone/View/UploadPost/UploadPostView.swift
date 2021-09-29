@@ -13,12 +13,12 @@ struct UploadPostView: View {
     @State var postImage: Image?
     @State var caption = ""
     @State var imagePickerPresented = false
+    @ObservedObject var viewModel = UploadPostViewModel()
     
     var body: some View {
         
         VStack{
             if(postImage == nil){
-                
                 Button(action: {
                     imagePickerPresented.toggle()
                 }, label: {
@@ -32,19 +32,28 @@ struct UploadPostView: View {
                 })
 
             }else if let image = postImage{
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                    HStack(alignment: .top){
+                
+                HStack(alignment:.top){
+                    
+                    Button(action: {
+                    }, label: {
                         image
                             .resizable()
                             .scaledToFill()
                             .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .clipped()
-                        
-                        TextField("Enter your caption", text: $caption)
-                    }
-                })
+                    })
+                    
+                    TextField("Enter your caption", text: $caption)
+                }
                 
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                
+                
+                Button(action: {
+                    if let image = selectedImage{
+                        viewModel.uploadPost(caption: caption, image: image)
+                    }
+                }, label: {
                     Text("Share")
                         .font(.system(size: 16, weight: .semibold))
                         .frame(width: 360, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -70,8 +79,8 @@ extension UploadPostView{
     }
 }
 
-struct UploadPostView_Previews: PreviewProvider {
-    static var previews: some View {
-        UploadPostView()
-    }
-}
+//struct UploadPostView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        UploadPostView()
+//    }
+//}
