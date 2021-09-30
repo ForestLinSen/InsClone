@@ -36,7 +36,6 @@ struct UploadPostView: View {
             }else if let image = postImage{
                 
                 HStack(alignment:.top){
-                    
                     Button(action: {
                     }, label: {
                         image
@@ -46,9 +45,10 @@ struct UploadPostView: View {
                             .clipped()
                     })
                     
-                    TextField("Enter your caption", text: $caption)
+                    //TextField("Enter your caption", text: $caption)
+                    TextArea(text: $caption, placeholder: "Enter your caption")
+                        .frame(height: 125)
                 }
-                
                 
                 
                 Button(action: {
