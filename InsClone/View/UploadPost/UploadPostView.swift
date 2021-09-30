@@ -15,6 +15,8 @@ struct UploadPostView: View {
     @State var imagePickerPresented = false
     @ObservedObject var viewModel = UploadPostViewModel()
     
+    @Binding var selectionIndex: Int
+    
     var body: some View {
         
         VStack{
@@ -51,7 +53,11 @@ struct UploadPostView: View {
                 
                 Button(action: {
                     if let image = selectedImage{
-                        viewModel.uploadPost(caption: caption, image: image)
+                        viewModel.uploadPost(caption: caption, image: image){ _ in
+                            postImage = nil
+                            caption = ""
+                            selectionIndex = 0
+                        }
                     }
                 }, label: {
                     Text("Share")

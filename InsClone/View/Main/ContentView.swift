@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @EnvironmentObject var viewModel: AuthViewModel
+    @State var selectedIndex = 0
     
     var body: some View {
         
@@ -19,18 +20,16 @@ struct ContentView: View {
             }else{
                 
                 if let user = viewModel.currentUser{
-                    MainTabView(user: user)
+                    MainTabView(selectionIndex: $selectedIndex, user: user)
                 }
-                
-                
             }
         }
 
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}
