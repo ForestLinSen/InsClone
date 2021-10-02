@@ -2,7 +2,7 @@
 //  imageUploader.swift
 //  InsClone
 //
-//  Created by SenLin on 14/9/2021.
+//  Created by Sen Lin on 14/9/2021.
 //
 
 import UIKit

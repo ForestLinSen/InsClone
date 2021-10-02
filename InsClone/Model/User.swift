@@ -2,7 +2,7 @@
 //  User.swift
 //  InsClone
 //
-//  Created by SenLin on 18/9/2021.
+//  Created by Sen Lin on 18/9/2021.
 //
 
 import FirebaseFirestoreSwift

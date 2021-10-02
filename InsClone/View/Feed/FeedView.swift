@@ -2,18 +2,21 @@
 //  FeedView.swift
 //  InsClone
 //
-//  Created by SenLin on 3/8/2021.
+//  Created by Sen Lin on 3/8/2021.
 //
 
 import SwiftUI
 
 struct FeedView: View {
+    
+    @ObservedObject var viewModel = PostViewModel()
+    
     var body: some View {
-        
+    
         ScrollView{  
             LazyVStack(spacing: 32) {
-                ForEach(0 ..< 10){ _ in
-                    FeedCell()
+                ForEach(viewModel.posts){ post in
+                    FeedCell(post: post)
                 }
             }
         }
@@ -23,8 +26,8 @@ struct FeedView: View {
     }
 }
 
-struct FeedView_Previews: PreviewProvider {
-    static var previews: some View {
-        FeedView()
-    }
-}
+//struct FeedView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        FeedView()
+//    }
+//}

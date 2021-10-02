@@ -2,7 +2,7 @@
 //  ProfileActionButton.swift
 //  InsClone
 //
-//  Created by SenLin on 5/8/2021.
+//  Created by Sen Lin on 5/8/2021.
 //
 
 import SwiftUI

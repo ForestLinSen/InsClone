@@ -2,7 +2,7 @@
 //  Constants.swift
 //  InsClone
 //
-//  Created by SenLin on 17/9/2021.
+//  Created by Sen Lin on 17/9/2021.
 //
 
 import Firebase

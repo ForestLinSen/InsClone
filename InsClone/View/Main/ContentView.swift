@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  InsClone
 //
-//  Created by SenLin on 2/8/2021.
+//  Created by Sen Lin on 2/8/2021.
 //
 
 import SwiftUI

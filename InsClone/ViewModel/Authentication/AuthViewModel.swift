@@ -2,7 +2,7 @@
 //  AuthViewModel.swift
 //  InsClone
 //
-//  Created by SenLin on 10/8/2021.
+//  Created by Sen Lin on 10/8/2021.
 //
 
 import SwiftUI

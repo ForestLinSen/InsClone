@@ -2,7 +2,7 @@
 //  UserService.swift
 //  InsClone
 //
-//  Created by 林森 on 27/9/2021.
+//  Created by Sen Lin on 27/9/2021.
 //
 
 import Firebase

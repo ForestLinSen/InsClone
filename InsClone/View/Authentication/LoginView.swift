@@ -2,7 +2,7 @@
 //  LoginView.swift
 //  InsClone
 //
-//  Created by SenLin on 8/8/2021.
+//  Created by Sen Lin on 8/8/2021.
 //
 
 import SwiftUI

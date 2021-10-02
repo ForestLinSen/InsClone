@@ -2,7 +2,7 @@
 //  UploadPostView.swift
 //  InsClone
 //
-//  Created by SenLin on 3/8/2021.
+//  Created by Sen Lin on 3/8/2021.
 //
 
 import SwiftUI
@@ -51,25 +51,39 @@ struct UploadPostView: View {
                 }
                 
                 
-                Button(action: {
-                    if let image = selectedImage{
-                        viewModel.uploadPost(caption: caption, image: image){ _ in
-                            postImage = nil
-                            caption = ""
-                            selectionIndex = 0
+                HStack(spacing: 8){
+                    Button(action: {
+                       postImage = nil
+                       caption = ""
+                    }, label: {
+                        Text("Cancel")
+                            .font(.system(size: 16, weight: .semibold))
+                            .frame(width: 175, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .background(Color(.systemRed))
+                            .cornerRadius(5)
+                            .foregroundColor(.white)
+                    })
+                    
+                    Button(action: {
+                        if let image = selectedImage{
+                            viewModel.uploadPost(caption: caption, image: image){ _ in
+                                postImage = nil
+                                caption = ""
+                                selectionIndex = 0
+                            }
                         }
-                    }
-                }, label: {
-                    Text("Share")
-                        .font(.system(size: 16, weight: .semibold))
-                        .frame(width: 360, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .background(Color(.systemBlue))
-                        .cornerRadius(5)
-                        .foregroundColor(.white)
-                })
+                    }, label: {
+                        Text("Share")
+                            .font(.system(size: 16, weight: .semibold))
+                            .frame(width: 175, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .background(Color(.systemBlue))
+                            .cornerRadius(5)
+                            .foregroundColor(.white)
+                    })
+                }
                 .padding()
             }
-            
+
             Spacer()
         }
         .padding()
@@ -86,7 +100,10 @@ extension UploadPostView{
 }
 
 //struct UploadPostView_Previews: PreviewProvider {
+//
+//    @State static var index = 0
+//
 //    static var previews: some View {
-//        UploadPostView()
+//        UploadPostView( selectionIndex: $index)
 //    }
 //}

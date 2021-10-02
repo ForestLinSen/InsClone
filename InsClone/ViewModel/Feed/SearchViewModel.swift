@@ -2,7 +2,7 @@
 //  SearchViewModel.swift
 //  InsClone
 //
-//  Created by SenLin on 20/9/2021.
+//  Created by Sen Lin on 20/9/2021.
 //
 
 import SwiftUI
