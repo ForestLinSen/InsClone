@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FeedView: View {
     
-    @ObservedObject var viewModel = PostViewModel()
+    @ObservedObject var viewModel = PostViewModel(config: .explore)
     
     var body: some View {
     

@@ -2,7 +2,7 @@
 //  Post.swift
 //  InsClone
 //
-//  Created by 林森 on 2/10/2021.
+//  Created by Sen Lin on 2/10/2021.
 //
 
 import FirebaseFirestoreSwift

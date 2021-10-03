@@ -18,6 +18,7 @@
 		F5612AC926BB98CB00CC4062 /* ProfileActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5612AC826BB98CA00CC4062 /* ProfileActionButton.swift */; };
 		F5697B5926C12B5100E7E5EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5697B5826C12B5100E7E5EE /* GoogleService-Info.plist */; };
 		F56AD76527019F72002E0FB2 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56AD76427019F72002E0FB2 /* UserService.swift */; };
+		F56BCA252709ABAC005F3B5A /* PostGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56BCA242709ABAB005F3B5A /* PostGridViewModel.swift */; };
 		F56FBE5426B8F77400A5D969 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56FBE5326B8F77400A5D969 /* FeedCell.swift */; };
 		F56FBE5626B9522A00A5D969 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56FBE5526B9522A00A5D969 /* SearchBar.swift */; };
 		F57D62DE26BD075A00DC33E5 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57D62DD26BD075A00DC33E5 /* ImagePicker.swift */; };
@@ -54,7 +55,6 @@
 		F5F3A23526F4A2C600E8EE9E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F3A23426F4A2C500E8EE9E /* Constants.swift */; };
 		F5F78A002708030F00E54427 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F789FF2708030F00E54427 /* Post.swift */; };
 		F5F78A0227080F8800E54427 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F78A0127080F8800E54427 /* PostViewModel.swift */; };
-		F5F78A04270810B100E54427 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F78A03270810B100E54427 /* PostService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +69,7 @@
 		F5612AC826BB98CA00CC4062 /* ProfileActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileActionButton.swift; sourceTree = "<group>"; };
 		F5697B5826C12B5100E7E5EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F56AD76427019F72002E0FB2 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		F56BCA242709ABAB005F3B5A /* PostGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGridViewModel.swift; sourceTree = "<group>"; };
 		F56FBE5326B8F77400A5D969 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		F56FBE5526B9522A00A5D969 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		F57D62DD26BD075A00DC33E5 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -99,7 +100,6 @@
 		F5F3A23426F4A2C500E8EE9E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F5F789FF2708030F00E54427 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		F5F78A0127080F8800E54427 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
-		F5F78A03270810B100E54427 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +126,6 @@
 			children = (
 				F583543626F05F2D000D0912 /* imageUploader.swift */,
 				F56AD76427019F72002E0FB2 /* UserService.swift */,
-				F5F78A03270810B100E54427 /* PostService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -208,6 +207,7 @@
 				F5AAF61126B8443B00411208 /* Profile */,
 				F58938F227045F9A00438492 /* UploadPostViewModel.swift */,
 				F5F78A0127080F8800E54427 /* PostViewModel.swift */,
+				F56BCA242709ABAB005F3B5A /* PostGridViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -429,10 +429,10 @@
 				F5AAF61726B852C000411208 /* ProfileHeaderView.swift in Sources */,
 				F583543726F05F2D000D0912 /* imageUploader.swift in Sources */,
 				F5AAF61B26B852FA00411208 /* UploadPostView.swift in Sources */,
-				F5F78A04270810B100E54427 /* PostService.swift in Sources */,
 				F5AAF62026B8534800411208 /* MainTabView.swift in Sources */,
 				F5AC477D26BA9796006E0469 /* NotificationViewCell.swift in Sources */,
 				F50DD8B926B9935B0026AD64 /* UserListView.swift in Sources */,
+				F56BCA252709ABAC005F3B5A /* PostGridViewModel.swift in Sources */,
 				F5C2767826BAD11F0095C81D /* ProfileView.swift in Sources */,
 				F58938F327045F9A00438492 /* UploadPostViewModel.swift in Sources */,
 				F5AAF5F326B8404300411208 /* AppDelegate.swift in Sources */,
