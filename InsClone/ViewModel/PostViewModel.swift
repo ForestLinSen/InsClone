@@ -22,7 +22,6 @@ class PostViewModel: ObservableObject{
     
     func fetchPosts(forConfig config: PostGridConfiguration){
         //guard let currentUserId = AuthViewModel.shared.userSession?.uid else {return}
-        
         switch config {
         case .explore:
             fetchExplorePagePosts()

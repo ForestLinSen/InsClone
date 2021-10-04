@@ -12,6 +12,7 @@
 		F50DD8B926B9935B0026AD64 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DD8B826B9935B0026AD64 /* UserListView.swift */; };
 		F511F17C26BFF0E900980116 /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511F17B26BFF0E900980116 /* CustomSecureField.swift */; };
 		F511F17E26C0344C00980116 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511F17D26C0344C00980116 /* RegistrationView.swift */; };
+		F522B137270AE07E0042B001 /* FeedCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F522B136270AE07E0042B001 /* FeedCellViewModel.swift */; };
 		F541D88126BF973600281364 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F541D88026BF973600281364 /* LoginView.swift */; };
 		F541D88326BFD7E500281364 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F541D88226BFD7E500281364 /* CustomTextField.swift */; };
 		F5612AC726BB970D00CC4062 /* UserStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5612AC626BB970D00CC4062 /* UserStatView.swift */; };
@@ -63,6 +64,7 @@
 		F50DD8B826B9935B0026AD64 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
 		F511F17B26BFF0E900980116 /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
 		F511F17D26C0344C00980116 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		F522B136270AE07E0042B001 /* FeedCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCellViewModel.swift; sourceTree = "<group>"; };
 		F541D88026BF973600281364 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F541D88226BFD7E500281364 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		F5612AC626BB970D00CC4062 /* UserStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatView.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				F58938F227045F9A00438492 /* UploadPostViewModel.swift */,
 				F5F78A0127080F8800E54427 /* PostViewModel.swift */,
 				F56BCA242709ABAB005F3B5A /* PostGridViewModel.swift */,
+				F59D605A26F83A850081E018 /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -310,7 +313,7 @@
 		F5AAF61426B8445300411208 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				F59D605A26F83A850081E018 /* SearchViewModel.swift */,
+				F522B136270AE07E0042B001 /* FeedCellViewModel.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				F5AC477B26BA4198006E0469 /* Extensions.swift in Sources */,
 				F511F17E26C0344C00980116 /* RegistrationView.swift in Sources */,
 				F5612AC926BB98CB00CC4062 /* ProfileActionButton.swift in Sources */,
+				F522B137270AE07E0042B001 /* FeedCellViewModel.swift in Sources */,
 				F5F78A002708030F00E54427 /* Post.swift in Sources */,
 				F59D605B26F83A850081E018 /* SearchViewModel.swift in Sources */,
 				F541D88126BF973600281364 /* LoginView.swift in Sources */,

@@ -31,7 +31,6 @@ struct UserService{
                 // delete the follower document
                 Firestore.firestore().collection("followers").document(uid)
                     .collection("user-followers").document(currentUserId).delete(completion: completion)
-                
             }
     }
     
