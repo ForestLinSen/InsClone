@@ -10,6 +10,7 @@ import Firebase
 
 class FeedCellViewModel: ObservableObject{
     @Published var post: Post
+    var inProcess: Bool = false //avoid multiple clicks
     
     var likesLabel: String {
         let label = post.likes > 1 ? "likes" : "like"
@@ -22,6 +23,9 @@ class FeedCellViewModel: ObservableObject{
     }
     
     func like(){
+        guard self.inProcess == false else {return}
+        self.inProcess = true
+        
         guard let uid = AuthViewModel.shared.userSession?.uid else {return}
         guard let postId = post.id else {return}
         
@@ -34,6 +38,7 @@ class FeedCellViewModel: ObservableObject{
                 Firestore.firestore().collection("posts").document(postId).updateData(["likes": self.post.likes+1])
                 self.post.likes += 1
                 self.post.didLike = true
+                self.inProcess = false
             
         }
         
@@ -41,6 +46,9 @@ class FeedCellViewModel: ObservableObject{
     }
     
     func unlike(){
+        guard self.inProcess == false else {return}
+        self.inProcess = true
+        
         guard let uid = AuthViewModel.shared.userSession?.uid else {return}
         guard let postId = post.id else {return}
         
@@ -49,6 +57,7 @@ class FeedCellViewModel: ObservableObject{
                 self.post.didLike = false
                 self.post.likes -= 1
                 Firestore.firestore().collection("posts").document(postId).updateData(["likes": self.post.likes-1])
+                self.inProcess = false
             }
     }
     

@@ -43,7 +43,6 @@ struct FeedCell: View {
             HStack(spacing: 16){
                 Button(action: {
                     didLike ? viewModel.unlike() : viewModel.like()
-                    //usleep(500000)
                 }, label: {
                     Image(systemName: didLike ? "heart.fill" : "heart")
                         .resizable()
