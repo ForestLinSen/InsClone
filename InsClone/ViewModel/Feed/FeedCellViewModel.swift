@@ -18,6 +18,7 @@ class FeedCellViewModel: ObservableObject{
     
     init(post: Post) {
         self.post = post
+        checkIfLiked()
     }
     
     func like(){
@@ -40,6 +41,26 @@ class FeedCellViewModel: ObservableObject{
     }
     
     func unlike(){
-        print("unfollow this post")
+        guard let uid = AuthViewModel.shared.userSession?.uid else {return}
+        guard let postId = post.id else {return}
+        
+        Firestore.firestore().collection("users").document(uid)
+            .collection("user-likes").document(postId).delete(){ _ in
+                self.post.didLike = false
+                self.post.likes -= 1
+                Firestore.firestore().collection("posts").document(postId).updateData(["likes": self.post.likes-1])
+            }
+    }
+    
+    func checkIfLiked(){
+        guard let uid = AuthViewModel.shared.userSession?.uid else {return}
+        guard let postId = post.id else {return}
+        
+        Firestore.firestore().collection("users").document(uid)
+            .collection("user-likes").document(postId).getDocument { snapShot, _ in
+                if(snapShot?.data() != nil){
+                    self.post.didLike = true
+                }
+        }
     }
 }
