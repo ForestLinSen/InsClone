@@ -39,11 +39,10 @@ class FeedCellViewModel: ObservableObject{
                 self.post.likes += 1
                 self.post.didLike = true
                 self.inProcess = false
-            
         }
-        
-        print("Like this post")
+
     }
+    
     
     func unlike(){
         guard self.inProcess == false else {return}
@@ -60,6 +59,7 @@ class FeedCellViewModel: ObservableObject{
                 self.inProcess = false
             }
     }
+    
     
     func checkIfLiked(){
         guard let uid = AuthViewModel.shared.userSession?.uid else {return}
