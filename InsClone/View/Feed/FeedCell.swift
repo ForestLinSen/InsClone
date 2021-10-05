@@ -44,9 +44,10 @@ struct FeedCell: View {
                 Button(action: {
                     didLike ? viewModel.unlike() : viewModel.like()
                 }, label: {
-                    Image(systemName: "heart")
+                    Image(systemName: didLike ? "heart.fill" : "heart")
                         .resizable()
                         .scaledToFill()
+                        .foregroundColor(Color(.systemRed))
                         .frame(width: 20, height: 20)
                         .font(.system(size: 20))
                         .padding(4)
@@ -74,7 +75,7 @@ struct FeedCell: View {
             .foregroundColor(.black)
             
             
-            Text("\(viewModel.post.likes) likes")
+            Text(viewModel.likesLabel)
                 .font(.system(size: 14, weight: .semibold))
                 .padding(.leading, 8)
                 .padding(.bottom, 2)
