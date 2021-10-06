@@ -2,12 +2,15 @@
 //  CommentsView.swift
 //  InsClone
 //
-//  Created by 林森 on 5/10/2021.
+//  Created by Sen Lin on 5/10/2021.
 //
 
 import SwiftUI
 
 struct CommentsView: View {
+    
+    @State var text: String
+    
     var body: some View {
         VStack{
             ScrollView{
@@ -19,6 +22,11 @@ struct CommentsView: View {
                 }
             }
             .padding(.top)
+            .onTapGesture {
+                UIApplication.shared.endEditing()
+            }
+            
+            CustomInputView(inputText: $text, action: {})
         }
     
     }
@@ -26,6 +34,6 @@ struct CommentsView: View {
 
 struct CommentsView_Previews: PreviewProvider {
     static var previews: some View {
-        CommentsView()
+        CommentsView(text: "")
     }
 }

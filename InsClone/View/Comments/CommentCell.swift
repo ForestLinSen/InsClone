@@ -2,7 +2,7 @@
 //  CommentCell.swift
 //  InsClone
 //
-//  Created by 林森 on 5/10/2021.
+//  Created by Sen Lin on 5/10/2021.
 //
 
 import SwiftUI
