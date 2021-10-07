@@ -10,9 +10,11 @@ import Firebase
 
 class CommentViewModel: ObservableObject{
     private let post: Post
+    @Published var comments: [Comment] = []
     
     init(post: Post) {
         self.post = post
+        fetchComments()
     }
     
     func uploadComment(commentText: String){
@@ -31,11 +33,17 @@ class CommentViewModel: ObservableObject{
                 print("Debug: error uploading comments: \(error.localizedDescription)")
             }
             
+            self.fetchComments()
             
         }
     }
     
+    
     func fetchComments(){
-        
+        guard let postId = self.post.id else { return }
+        Firestore.firestore().collection("posts").document(postId).collection("comments").getDocuments { snapShot, _ in
+            guard let documents = snapShot?.documents else { return }
+            self.comments = documents.compactMap({try? $0.data(as: Comment.self)})
+        }
     }
 }

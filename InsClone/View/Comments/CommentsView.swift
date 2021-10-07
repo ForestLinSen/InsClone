@@ -12,12 +12,13 @@ struct CommentsView: View {
     @State var text: String
     @ObservedObject var viewModel: CommentViewModel
     
+    
     var body: some View {
         VStack{
             ScrollView{
                 LazyVStack(alignment: .leading, spacing: 12){
-                    ForEach(0..<10){_ in
-                        CommentCell()
+                    ForEach(viewModel.comments){comment in
+                        CommentCell(comment: comment)
                             .padding(.leading)
                     }
                 }

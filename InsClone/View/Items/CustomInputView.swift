@@ -33,11 +33,7 @@ struct CustomInputView: View {
                 })
             }
             .padding(.init(top: 8, leading: 16, bottom: 16, trailing: 16))
-            
-            
         }
-        
-        
     }
 }
 
