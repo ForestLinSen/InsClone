@@ -55,7 +55,7 @@ struct FeedCell: View {
                 
                 
                 NavigationLink(
-                    destination: CommentsView(text: ""),
+                    destination: CommentsView(text: "", viewModel: CommentViewModel(post: viewModel.post)),
                     label: {
                         Image(systemName: "bubble.right")
                             .resizable()

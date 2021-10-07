@@ -14,6 +14,8 @@
 		F511F17E26C0344C00980116 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511F17D26C0344C00980116 /* RegistrationView.swift */; };
 		F522B137270AE07E0042B001 /* FeedCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F522B136270AE07E0042B001 /* FeedCellViewModel.swift */; };
 		F52ADA98270D5F040033E6BB /* CustomInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52ADA97270D5F030033E6BB /* CustomInputView.swift */; };
+		F52ADA9A270D910D0033E6BB /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52ADA99270D910D0033E6BB /* Comment.swift */; };
+		F52ADA9C270D914E0033E6BB /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52ADA9B270D914E0033E6BB /* CommentViewModel.swift */; };
 		F541D88126BF973600281364 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F541D88026BF973600281364 /* LoginView.swift */; };
 		F541D88326BFD7E500281364 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F541D88226BFD7E500281364 /* CustomTextField.swift */; };
 		F5612AC726BB970D00CC4062 /* UserStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5612AC626BB970D00CC4062 /* UserStatView.swift */; };
@@ -69,6 +71,8 @@
 		F511F17D26C0344C00980116 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		F522B136270AE07E0042B001 /* FeedCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCellViewModel.swift; sourceTree = "<group>"; };
 		F52ADA97270D5F030033E6BB /* CustomInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputView.swift; sourceTree = "<group>"; };
+		F52ADA99270D910D0033E6BB /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		F52ADA9B270D914E0033E6BB /* CommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
 		F541D88026BF973600281364 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F541D88226BFD7E500281364 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		F5612AC626BB970D00CC4062 /* UserStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatView.swift; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 			children = (
 				F5E7679526F5BFC100174921 /* User.swift */,
 				F5F789FF2708030F00E54427 /* Post.swift */,
+				F52ADA99270D910D0033E6BB /* Comment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 				F5F78A0127080F8800E54427 /* PostViewModel.swift */,
 				F56BCA242709ABAB005F3B5A /* PostGridViewModel.swift */,
 				F59D605A26F83A850081E018 /* SearchViewModel.swift */,
+				F52ADA9B270D914E0033E6BB /* CommentViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -442,9 +448,11 @@
 				F583543726F05F2D000D0912 /* imageUploader.swift in Sources */,
 				F5AAF61B26B852FA00411208 /* UploadPostView.swift in Sources */,
 				F5AAF62026B8534800411208 /* MainTabView.swift in Sources */,
+				F52ADA9A270D910D0033E6BB /* Comment.swift in Sources */,
 				F5AC477D26BA9796006E0469 /* NotificationViewCell.swift in Sources */,
 				F50DD8B926B9935B0026AD64 /* UserListView.swift in Sources */,
 				F56BCA252709ABAC005F3B5A /* PostGridViewModel.swift in Sources */,
+				F52ADA9C270D914E0033E6BB /* CommentViewModel.swift in Sources */,
 				F5C2767826BAD11F0095C81D /* ProfileView.swift in Sources */,
 				F58938F327045F9A00438492 /* UploadPostViewModel.swift in Sources */,
 				F5AAF5F326B8404300411208 /* AppDelegate.swift in Sources */,

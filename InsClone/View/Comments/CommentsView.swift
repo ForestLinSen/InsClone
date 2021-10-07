@@ -10,6 +10,7 @@ import SwiftUI
 struct CommentsView: View {
     
     @State var text: String
+    @ObservedObject var viewModel: CommentViewModel
     
     var body: some View {
         VStack{
@@ -26,14 +27,14 @@ struct CommentsView: View {
                 UIApplication.shared.endEditing()
             }
             
-            CustomInputView(inputText: $text, action: {})
+            CustomInputView(inputText: $text, action: viewModel.uploadComment)
         }
     
     }
 }
 
-struct CommentsView_Previews: PreviewProvider {
-    static var previews: some View {
-        CommentsView(text: "")
-    }
-}
+//struct CommentsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CommentsView(text: "")
+//    }
+//}

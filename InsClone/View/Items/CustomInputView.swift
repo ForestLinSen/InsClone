@@ -10,7 +10,7 @@ import SwiftUI
 struct CustomInputView: View {
     
     @Binding var inputText: String
-    var action: ()->Void
+    var action: (String) -> Void
     
     var body: some View {
         
@@ -23,9 +23,14 @@ struct CustomInputView: View {
                 TextField("Comment...", text: $inputText)
                     .font(.system(size: 13))
                 
-                Button(action: action){
+                Button(action: {
+                    action(inputText)
+                    UIApplication.shared.endEditing()
+                    inputText = ""
+                    
+                }, label: {
                     Text("Send")
-                }
+                })
             }
             .padding(.init(top: 8, leading: 16, bottom: 16, trailing: 16))
             
@@ -36,8 +41,8 @@ struct CustomInputView: View {
     }
 }
 
-struct CustomInputView_Previews: PreviewProvider {
-    static var previews: some View {
-        CustomInputView(inputText: .constant(""), action: {})
-    }
-}
+//struct CustomInputView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CustomInputView(inputText: .constant(""), action: {})
+//    }
+//}
