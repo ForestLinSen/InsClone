@@ -20,6 +20,7 @@
 		F541D88326BFD7E500281364 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F541D88226BFD7E500281364 /* CustomTextField.swift */; };
 		F5612AC726BB970D00CC4062 /* UserStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5612AC626BB970D00CC4062 /* UserStatView.swift */; };
 		F5612AC926BB98CB00CC4062 /* ProfileActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5612AC826BB98CA00CC4062 /* ProfileActionButton.swift */; };
+		F56616E127109C880073ECDA /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56616E027109C880073ECDA /* NotificationViewModel.swift */; };
 		F5697B5926C12B5100E7E5EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5697B5826C12B5100E7E5EE /* GoogleService-Info.plist */; };
 		F56AD76527019F72002E0FB2 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56AD76427019F72002E0FB2 /* UserService.swift */; };
 		F56BCA252709ABAC005F3B5A /* PostGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56BCA242709ABAB005F3B5A /* PostGridViewModel.swift */; };
@@ -50,6 +51,7 @@
 		F5CCB5C226C25E4700450C6A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F5CCB5C126C25E4700450C6A /* Kingfisher */; };
 		F5CCB5C426C25F4C00450C6A /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CCB5C326C25F4C00450C6A /* AuthViewModel.swift */; };
 		F5D9290E270087AD00A0E768 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D9290D270087AC00A0E768 /* ProfileViewModel.swift */; };
+		F5E1D87C27103A2500674360 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1D87B27103A2500674360 /* Notification.swift */; };
 		F5E7679626F5BFC100174921 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E7679526F5BFC100174921 /* User.swift */; };
 		F5E7679926F5C5A800174921 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F5E7679826F5C5A800174921 /* FirebaseFirestore */; };
 		F5E7679B26F5C5A800174921 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = F5E7679A26F5C5A800174921 /* FirebaseDatabase */; };
@@ -77,6 +79,7 @@
 		F541D88226BFD7E500281364 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		F5612AC626BB970D00CC4062 /* UserStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatView.swift; sourceTree = "<group>"; };
 		F5612AC826BB98CA00CC4062 /* ProfileActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileActionButton.swift; sourceTree = "<group>"; };
+		F56616E027109C880073ECDA /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		F5697B5826C12B5100E7E5EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F56AD76427019F72002E0FB2 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		F56BCA242709ABAB005F3B5A /* PostGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGridViewModel.swift; sourceTree = "<group>"; };
@@ -108,6 +111,7 @@
 		F5CB61222705AC160079FCB9 /* TextArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextArea.swift; sourceTree = "<group>"; };
 		F5CCB5C326C25F4C00450C6A /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		F5D9290D270087AC00A0E768 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		F5E1D87B27103A2500674360 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		F5E7679526F5BFC100174921 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F5F3A23426F4A2C500E8EE9E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F5F789FF2708030F00E54427 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -191,6 +195,7 @@
 				F5E7679526F5BFC100174921 /* User.swift */,
 				F5F789FF2708030F00E54427 /* Post.swift */,
 				F52ADA99270D910D0033E6BB /* Comment.swift */,
+				F5E1D87B27103A2500674360 /* Notification.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -223,6 +228,7 @@
 				F56BCA242709ABAB005F3B5A /* PostGridViewModel.swift */,
 				F59D605A26F83A850081E018 /* SearchViewModel.swift */,
 				F52ADA9B270D914E0033E6BB /* CommentViewModel.swift */,
+				F56616E027109C880073ECDA /* NotificationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -461,6 +467,7 @@
 				F5F78A0227080F8800E54427 /* PostViewModel.swift in Sources */,
 				F56AD76527019F72002E0FB2 /* UserService.swift in Sources */,
 				F541D88326BFD7E500281364 /* CustomTextField.swift in Sources */,
+				F56616E127109C880073ECDA /* NotificationViewModel.swift in Sources */,
 				F574B567270C8CD800701949 /* CommentCell.swift in Sources */,
 				F5AAF5F526B8404300411208 /* SceneDelegate.swift in Sources */,
 				F5AC477B26BA4198006E0469 /* Extensions.swift in Sources */,
@@ -479,6 +486,7 @@
 				F511F17C26BFF0E900980116 /* CustomSecureField.swift in Sources */,
 				F57D62DE26BD075A00DC33E5 /* ImagePicker.swift in Sources */,
 				F56FBE5626B9522A00A5D969 /* SearchBar.swift in Sources */,
+				F5E1D87C27103A2500674360 /* Notification.swift in Sources */,
 				F5AAF61926B852D900411208 /* NotificationView.swift in Sources */,
 				F52ADA98270D5F040033E6BB /* CustomInputView.swift in Sources */,
 				F5F3A23526F4A2C600E8EE9E /* Constants.swift in Sources */,

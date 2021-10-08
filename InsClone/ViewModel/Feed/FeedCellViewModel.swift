@@ -39,6 +39,8 @@ class FeedCellViewModel: ObservableObject{
                 self.post.likes += 1
                 self.post.didLike = true
                 self.inProcess = false
+                
+                NotificationViewModel.uploadNotification(type: .like, post: self.post)
         }
 
     }

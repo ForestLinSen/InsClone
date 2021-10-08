@@ -33,7 +33,9 @@ class CommentViewModel: ObservableObject{
                 print("Debug: error uploading comments: \(error.localizedDescription)")
             }
             
-            self.fetchComments()
+            NotificationViewModel.uploadNotification(type: .comment, post: self.post)
+            
+            //self.fetchComments()
             
         }
     }
@@ -41,9 +43,19 @@ class CommentViewModel: ObservableObject{
     
     func fetchComments(){
         guard let postId = self.post.id else { return }
-        Firestore.firestore().collection("posts").document(postId).collection("comments").getDocuments { snapShot, _ in
-            guard let documents = snapShot?.documents else { return }
-            self.comments = documents.compactMap({try? $0.data(as: Comment.self)})
+        
+        let query = Firestore.firestore().collection("posts").document(postId).collection("comments").order(by: "timestamp", descending: true)
+        
+        query.addSnapshotListener { snapShot, _ in
+            guard let addedDocs = snapShot?.documentChanges.filter({$0.type == .added}) else { return }
+            self.comments.append(contentsOf: addedDocs.compactMap({try? $0.document.data(as: Comment.self)}))
         }
+        
+//        Firestore.firestore().collection("posts").document(postId).collection("comments").getDocuments { snapShot, _ in
+//            guard let documents = snapShot?.documents else { return }
+//            self.comments = documents.compactMap({try? $0.data(as: Comment.self)})
+//        }
+        
+        
     }
 }
