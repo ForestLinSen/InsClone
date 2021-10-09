@@ -9,6 +9,11 @@ import SwiftUI
 import Firebase
 
 class NotificationViewModel: ObservableObject{
+    
+    init() {
+        fetchNotifcation()
+    }
+    
     @Published var notifications: [Notification] = []
     
     static func uploadNotification(type: NotificationType, post: Post? = nil){
@@ -30,6 +35,12 @@ class NotificationViewModel: ObservableObject{
     }
     
     func fetchNotifcation(){
+        guard let user = AuthViewModel.shared.currentUser else { return }
+        guard let uid = user.id else { return }
         
+        Firestore.firestore().collection("notifications").document(uid).collection("user-notification").getDocuments { snapShot, _ in
+            guard let documents = snapShot?.documents else { return }
+            self.notifications = documents.compactMap({ try? $0.data(as: Notification.self)})
+        }
     }
 }

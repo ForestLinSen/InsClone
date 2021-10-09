@@ -6,29 +6,32 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct NotificationViewCell: View {
     
     @State var showPostImage: Bool = true
     
+    let notification: Notification
+    
     var body: some View {
         HStack{
-            Image("ironMan")
+            KFImage(URL(string: notification.profileImageUrl))
                 .resizable()
                 .scaledToFill()
                 .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .clipShape(Circle())
             
-            Text("Iron Man")
+            Text(notification.username)
                 .font(.system(size: 14, weight: .semibold))
             
-            Text("liked one of your posts")
+            Text(NotificationType(rawValue: notification.type)?.notificationMessage ?? "")
                 .font(.system(size: 15))
             
             Spacer()
             
             if(showPostImage){
-                Image("ironMan")
+                KFImage(URL(string: notification.profileImageUrl))
                     .resizable()
                     .scaledToFill()
                     .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -50,8 +53,8 @@ struct NotificationViewCell: View {
     }
 }
 
-struct NotificationViewCell_Previews: PreviewProvider {
-    static var previews: some View {
-        NotificationViewCell()
-    }
-}
+//struct NotificationViewCell_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NotificationViewCell()
+//    }
+//}
