@@ -16,7 +16,7 @@ class NotificationViewModel: ObservableObject{
     
     @Published var notifications: [Notification] = []
     
-    static func uploadNotification(type: NotificationType, post: Post? = nil){
+    static func uploadNotification(type: NotificationType, post: Post? = nil, toWhom: String){
         guard let user = AuthViewModel.shared.currentUser else { return }
         guard let uid = user.id else { return }
                 
@@ -27,10 +27,11 @@ class NotificationViewModel: ObservableObject{
                                    "uid": uid]
         
         if let post = post, let postId = post.id{
+            guard post.ownerUid == toWhom else { return }
             data["postd"] = postId
         }
         
-        Firestore.firestore().collection("notifications").document(uid).collection("user-notification").addDocument(data: data)
+        Firestore.firestore().collection("notifications").document(toWhom).collection("user-notification").addDocument(data: data)
         
     }
     

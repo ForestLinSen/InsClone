@@ -25,12 +25,12 @@ struct NotificationViewCell: View {
             Text(notification.username)
                 .font(.system(size: 14, weight: .semibold))
             
-            Text(NotificationType(rawValue: notification.type)?.notificationMessage ?? "")
+            Text(notification.type.notificationMessage)
                 .font(.system(size: 15))
             
             Spacer()
             
-            if(showPostImage){
+            if(notification.type != .follow){
                 KFImage(URL(string: notification.profileImageUrl))
                     .resizable()
                     .scaledToFill()
