@@ -49,4 +49,11 @@ struct UserService{
             })
     }
     
+    static func getPostImage(postId: String, completion: @escaping (String)->Void){
+        Firestore.firestore().collection("posts").document(postId).getDocument { snapShot, _ in
+            guard let document = snapShot?.data() else { return }
+            completion(document["imageUrl"] as! String)
+        }
+    }
+    
 }

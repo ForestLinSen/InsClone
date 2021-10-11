@@ -11,6 +11,7 @@ import FirebaseFirestoreSwift
 struct Notification: Identifiable, Decodable{
     @DocumentID var id: String?
     var postId: String?
+    var postImageUrl: String?
     let username: String
     let profileImageUrl: String
     let timestamp: Timestamp

@@ -28,7 +28,8 @@ class NotificationViewModel: ObservableObject{
         
         if let post = post, let postId = post.id{
             guard post.ownerUid == toWhom else { return }
-            data["postd"] = postId
+            data["postId"] = postId
+            data["postImageUrl"] = post.imageUrl
         }
         
         Firestore.firestore().collection("notifications").document(toWhom).collection("user-notification").addDocument(data: data)

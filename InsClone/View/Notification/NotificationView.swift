@@ -15,6 +15,11 @@ struct NotificationView: View {
         ScrollView {
             LazyVStack (spacing: 20){
                 ForEach(viewModel.notifications){ notification in
+                    
+//                    if notification.type != .follow{
+//
+//                    }
+                    
                     NotificationViewCell(notification: notification)
                 }
             }
@@ -23,8 +28,8 @@ struct NotificationView: View {
     }
 }
 
-struct NotificationView_Previews: PreviewProvider {
-    static var previews: some View {
-        NotificationView()
-    }
-}
+//struct NotificationView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NotificationView()
+//    }
+//}

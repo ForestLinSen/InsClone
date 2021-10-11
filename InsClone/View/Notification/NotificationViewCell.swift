@@ -10,28 +10,33 @@ import Kingfisher
 
 struct NotificationViewCell: View {
     
+    var viewModel: NotificationCellViewModel
+    
     @State var showPostImage: Bool = true
     
-    let notification: Notification
+    init(notification: Notification){
+        self.viewModel = NotificationCellViewModel(notification: notification)
+    }
     
     var body: some View {
         HStack{
-            KFImage(URL(string: notification.profileImageUrl))
+            KFImage(URL(string: viewModel.notification.profileImageUrl))
                 .resizable()
                 .scaledToFill()
                 .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .clipShape(Circle())
             
-            Text(notification.username)
+            Text(viewModel.notification.username)
                 .font(.system(size: 14, weight: .semibold))
             
-            Text(notification.type.notificationMessage)
+            Text(viewModel.notification.type.notificationMessage)
                 .font(.system(size: 15))
             
             Spacer()
             
-            if(notification.type != .follow){
-                KFImage(URL(string: notification.profileImageUrl))
+            if(viewModel.notification.type != .follow){
+                
+                KFImage(URL(string: viewModel.notification.postImageUrl ?? ""))
                     .resizable()
                     .scaledToFill()
                     .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
