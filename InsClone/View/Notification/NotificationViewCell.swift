@@ -10,7 +10,7 @@ import Kingfisher
 
 struct NotificationViewCell: View {
     
-    var viewModel: NotificationCellViewModel
+    @ObservedObject var viewModel: NotificationCellViewModel
     
     @State var showPostImage: Bool = true
     
@@ -20,27 +20,36 @@ struct NotificationViewCell: View {
     
     var body: some View {
         HStack{
-            KFImage(URL(string: viewModel.notification.profileImageUrl))
-                .resizable()
-                .scaledToFill()
-                .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .clipShape(Circle())
             
-            Text(viewModel.notification.username)
-                .font(.system(size: 14, weight: .semibold))
-            
-            Text(viewModel.notification.type.notificationMessage)
-                .font(.system(size: 15))
-            
+            if let post = viewModel.notification.post{
+                NavigationLink {
+                    FeedCell(post: post)
+                } label: {
+                    KFImage(URL(string: viewModel.notification.profileImageUrl))
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .clipShape(Circle())
+                    
+                    Text(viewModel.notification.username)
+                        .font(.system(size: 14, weight: .semibold))
+                    
+                    Text(viewModel.notification.type.notificationMessage)
+                        .font(.system(size: 15))
+                }
+
+            }
+
             Spacer()
             
             if(viewModel.notification.type != .follow){
-                
-                KFImage(URL(string: viewModel.notification.postImageUrl ?? ""))
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .clipped()
+                if let post = viewModel.notification.post{
+                    KFImage(URL(string: post.imageUrl))
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .clipped()
+                }
             }else{
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                     Text("Follow")

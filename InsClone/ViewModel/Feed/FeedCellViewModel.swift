@@ -56,8 +56,8 @@ class FeedCellViewModel: ObservableObject{
         Firestore.firestore().collection("users").document(uid)
             .collection("user-likes").document(postId).delete(){ _ in
                 self.post.didLike = false
-                self.post.likes -= 1
                 Firestore.firestore().collection("posts").document(postId).updateData(["likes": self.post.likes-1])
+                self.post.likes -= 1
                 self.inProcess = false
             }
     }

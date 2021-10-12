@@ -6,24 +6,20 @@
 //
 
 import SwiftUI
+import Firebase
 
 class NotificationCellViewModel: ObservableObject{
     @Published var notification: Notification
     
     init(notification: Notification){
         self.notification = notification
-        //fetchImage()
+        fetchNotification()
     }
     
-//    func fetchImage(){
-//
-//        guard let postId = self.notification.postId else { return }
-//
-//        print("Debug: begin to fetch image for notification")
-//
-//        UserService.getPostImage(postId: postId) { imageUrl in
-//            self.imageUrl = imageUrl
-//            print("Debug: image for notification: \(self.imageUrl)")
-//        }
-//    }
+    func fetchNotification(){
+        guard let postId = notification.postId else { return }
+        Firestore.firestore().collection("posts").document(postId).getDocument { snapShot, _ in
+            self.notification.post = try? snapShot?.data(as: Post.self)
+        }
+    }
 }

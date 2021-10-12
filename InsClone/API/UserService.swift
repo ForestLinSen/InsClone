@@ -55,5 +55,5 @@ struct UserService{
             completion(document["imageUrl"] as! String)
         }
     }
-    
+
 }

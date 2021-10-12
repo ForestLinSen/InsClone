@@ -11,12 +11,13 @@ import FirebaseFirestoreSwift
 struct Notification: Identifiable, Decodable{
     @DocumentID var id: String?
     var postId: String?
-    var postImageUrl: String?
+    //var postImageUrl: String?
     let username: String
     let profileImageUrl: String
     let timestamp: Timestamp
     let type: NotificationType
     let uid: String
+    var post: Post?
 }
 
 enum NotificationType: Int, Decodable{
