@@ -13,13 +13,23 @@ class NotificationCellViewModel: ObservableObject{
     
     init(notification: Notification){
         self.notification = notification
-        fetchNotification()
+        fetchPostNotification()
+        fetchUserNotification()
     }
     
-    func fetchNotification(){
+    func fetchPostNotification(){
         guard let postId = notification.postId else { return }
         Firestore.firestore().collection("posts").document(postId).getDocument { snapShot, _ in
             self.notification.post = try? snapShot?.data(as: Post.self)
         }
     }
+    
+    func fetchUserNotification(){
+        guard let toWhomId = notification.toWhom else { return }
+        Firestore.firestore().collection("users").document(toWhomId).getDocument { snapShot, _ in
+            self.notification.user = try? snapShot?.data(as: User.self)
+        }
+    }
+    
+    
 }

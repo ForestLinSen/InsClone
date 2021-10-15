@@ -18,6 +18,8 @@ struct Notification: Identifiable, Decodable{
     let type: NotificationType
     let uid: String
     var post: Post?
+    var user: User?
+    var toWhom: String?
 }
 
 enum NotificationType: Int, Decodable{

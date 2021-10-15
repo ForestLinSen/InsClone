@@ -24,7 +24,8 @@ class NotificationViewModel: ObservableObject{
                                    "profileImageUrl": user.profileImageUrl,
                                    "timestamp": Timestamp(date: Date()),
                                    "type": type.rawValue,
-                                   "uid": uid]
+                                   "uid": uid,
+                                   "toWhom": toWhom]
         
         if let post = post, let postId = post.id{
             guard post.ownerUid == toWhom else { return }

@@ -36,8 +36,8 @@ struct FeedCell: View {
             
             KFImage(URL(string: viewModel.post.imageUrl))
                 .resizable()
-                .scaledToFill()
-                .frame(maxHeight:440)
+                .scaledToFit()
+                .frame(maxHeight:360)
                 .clipped()
             
             HStack(spacing: 16){
