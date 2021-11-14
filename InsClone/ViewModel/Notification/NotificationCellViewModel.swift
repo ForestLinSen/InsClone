@@ -15,6 +15,16 @@ class NotificationCellViewModel: ObservableObject{
         self.notification = notification
         fetchPostNotification()
         fetchUserNotification()
+        
+        // update the isFollowed variable
+        if(self.notification.type == .follow){
+            UserService.checkIfUserIsFollowed(uid: notification.uid) { result in
+                self.notification.isFollowed = result
+                print("Debug: notification follow result: \(result)")
+            }
+        }
+        
+        
     }
     
     func fetchPostNotification(){

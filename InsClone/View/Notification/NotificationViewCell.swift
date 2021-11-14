@@ -37,9 +37,7 @@ struct NotificationViewCell: View {
                     Text(viewModel.notification.type.notificationMessage)
                         .font(.system(size: 15))
                 }
-            }
-            
-            if let user = viewModel.notification.user{
+            }else if let user = viewModel.notification.user{
                     NavigationLink{
                         ProfileView(user: user)
                     } label: {
@@ -69,15 +67,26 @@ struct NotificationViewCell: View {
                         .clipped()
                 }
             }else{
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                    Text("Follow")
-                        .font(.system(size: 14))
-                        .foregroundColor(Color(.white))
-                        
-                })
-                .frame(width: 110, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .background(Color(.systemBlue))
-                .clipShape(Capsule())
+                
+                if let isFollowed = viewModel.notification.isFollowed{
+                    Button(action: {
+                        if(!isFollowed){
+                            UserService.follow(uid: viewModel.notification.uid) { _ in
+                                viewModel.notification.isFollowed = true
+                            }
+                            
+                        }
+                    }, label: {
+                        Text(isFollowed ? "Following" : "Follow")
+                            .font(.system(size: 14))
+                            .foregroundColor(Color(.white))
+                            
+                    })
+                    .frame(width: 110, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .background(isFollowed ? Color(.systemGray) : Color(.systemBlue))
+                    .clipShape(Capsule())
+                }
+
             }
 
         }

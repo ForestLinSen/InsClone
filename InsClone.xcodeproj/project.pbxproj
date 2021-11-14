@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B961398C2740DEDD00F349C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B961398B2740DEDC00F349C6 /* GoogleService-Info.plist */; };
 		F50DD8B526B97C3C0026AD64 /* PostGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DD8B426B97C3C0026AD64 /* PostGridView.swift */; };
 		F50DD8B726B9905D0026AD64 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DD8B626B9905D0026AD64 /* UserCell.swift */; };
 		F50DD8B926B9935B0026AD64 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DD8B826B9935B0026AD64 /* UserListView.swift */; };
@@ -21,7 +22,6 @@
 		F5612AC726BB970D00CC4062 /* UserStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5612AC626BB970D00CC4062 /* UserStatView.swift */; };
 		F5612AC926BB98CB00CC4062 /* ProfileActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5612AC826BB98CA00CC4062 /* ProfileActionButton.swift */; };
 		F56616E127109C880073ECDA /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56616E027109C880073ECDA /* NotificationViewModel.swift */; };
-		F5697B5926C12B5100E7E5EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5697B5826C12B5100E7E5EE /* GoogleService-Info.plist */; };
 		F56AD76527019F72002E0FB2 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56AD76427019F72002E0FB2 /* UserService.swift */; };
 		F56BCA252709ABAC005F3B5A /* PostGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56BCA242709ABAB005F3B5A /* PostGridViewModel.swift */; };
 		F56FBE5426B8F77400A5D969 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56FBE5326B8F77400A5D969 /* FeedCell.swift */; };
@@ -67,6 +67,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B961398B2740DEDC00F349C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		F50DD8B426B97C3C0026AD64 /* PostGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGridView.swift; sourceTree = "<group>"; };
 		F50DD8B626B9905D0026AD64 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		F50DD8B826B9935B0026AD64 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
@@ -81,7 +82,6 @@
 		F5612AC626BB970D00CC4062 /* UserStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatView.swift; sourceTree = "<group>"; };
 		F5612AC826BB98CA00CC4062 /* ProfileActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileActionButton.swift; sourceTree = "<group>"; };
 		F56616E027109C880073ECDA /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
-		F5697B5826C12B5100E7E5EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F56AD76427019F72002E0FB2 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		F56BCA242709ABAB005F3B5A /* PostGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGridViewModel.swift; sourceTree = "<group>"; };
 		F56FBE5326B8F77400A5D969 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
@@ -177,7 +177,7 @@
 				F5AAF5F826B8404500411208 /* Assets.xcassets */,
 				F5AAF5FD26B8404500411208 /* LaunchScreen.storyboard */,
 				F5AAF60026B8404500411208 /* Info.plist */,
-				F5697B5826C12B5100E7E5EE /* GoogleService-Info.plist */,
+				B961398B2740DEDC00F349C6 /* GoogleService-Info.plist */,
 				F5AAF5FA26B8404500411208 /* Preview Content */,
 			);
 			path = InsClone;
@@ -436,7 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5AAF5FF26B8404500411208 /* LaunchScreen.storyboard in Resources */,
-				F5697B5926C12B5100E7E5EE /* GoogleService-Info.plist in Resources */,
+				B961398C2740DEDD00F349C6 /* GoogleService-Info.plist in Resources */,
 				F5AAF5FC26B8404500411208 /* Preview Assets.xcassets in Resources */,
 				F5AAF5F926B8404500411208 /* Assets.xcassets in Resources */,
 			);
