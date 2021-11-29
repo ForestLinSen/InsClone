@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B961398C2740DEDD00F349C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B961398B2740DEDC00F349C6 /* GoogleService-Info.plist */; };
+		B9D77F302754DDCD00730A31 /* HelpFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D77F2F2754DDCD00730A31 /* HelpFunctions.swift */; };
 		F50DD8B526B97C3C0026AD64 /* PostGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DD8B426B97C3C0026AD64 /* PostGridView.swift */; };
 		F50DD8B726B9905D0026AD64 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DD8B626B9905D0026AD64 /* UserCell.swift */; };
 		F50DD8B926B9935B0026AD64 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DD8B826B9935B0026AD64 /* UserListView.swift */; };
@@ -68,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		B961398B2740DEDC00F349C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		B9D77F2F2754DDCD00730A31 /* HelpFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpFunctions.swift; sourceTree = "<group>"; };
 		F50DD8B426B97C3C0026AD64 /* PostGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGridView.swift; sourceTree = "<group>"; };
 		F50DD8B626B9905D0026AD64 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		F50DD8B826B9935B0026AD64 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 				F511F17B26BFF0E900980116 /* CustomSecureField.swift */,
 				F5F3A23426F4A2C500E8EE9E /* Constants.swift */,
 				F5CB61222705AC160079FCB9 /* TextArea.swift */,
+				B9D77F2F2754DDCD00730A31 /* HelpFunctions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				F5E7679626F5BFC100174921 /* User.swift in Sources */,
 				F5AAF5F726B8404300411208 /* ContentView.swift in Sources */,
 				F5CCB5C426C25F4C00450C6A /* AuthViewModel.swift in Sources */,
+				B9D77F302754DDCD00730A31 /* HelpFunctions.swift in Sources */,
 				F5D9290E270087AD00A0E768 /* ProfileViewModel.swift in Sources */,
 				F511F17C26BFF0E900980116 /* CustomSecureField.swift in Sources */,
 				F57D62DE26BD075A00DC33E5 /* ImagePicker.swift in Sources */,

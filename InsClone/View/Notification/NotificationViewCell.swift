@@ -21,41 +21,79 @@ struct NotificationViewCell: View {
     var body: some View {
         HStack{
             
-            if let post = viewModel.notification.post{
-                NavigationLink {
-                    FeedCell(post: post)
-                } label: {
+            if let user = viewModel.notification.user{
+                NavigationLink{
+                    ProfileView(user: user)
+                }label: {
                     KFImage(URL(string: viewModel.notification.profileImageUrl))
                         .resizable()
                         .scaledToFill()
                         .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .clipShape(Circle())
                     
-                    Text(viewModel.notification.username)
-                        .font(.system(size: 14, weight: .semibold))
-                    
-                    Text(viewModel.notification.type.notificationMessage)
-                        .font(.system(size: 15))
-                }
-            }else if let user = viewModel.notification.user{
-                    NavigationLink{
-                        ProfileView(user: user)
-                    } label: {
-                        KFImage(URL(string: viewModel.notification.profileImageUrl))
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                            .clipShape(Circle())
-                        
-                        Text(viewModel.notification.username)
-                            .font(.system(size: 14, weight: .semibold))
-                        
+                    (
+                        Text("\(viewModel.notification.username) ")
+                        .font(.system(size: 16, weight: .semibold))
+                        +
                         Text(viewModel.notification.type.notificationMessage)
-                            .font(.system(size: 15))
-                    }
+                            .font(.system(size: 14))
+                        +
+                        Text(" \(viewModel.timestampString)")
+                            .font(.system(size: 14))
+                            .foregroundColor(.gray)
+                     
+                    ).multilineTextAlignment(.leading)
+                    
+                        
+                    
                 }
+            }
             
-
+//            if let post = viewModel.notification.post{
+//                NavigationLink {
+//                    FeedCell(post: post)
+//                } label: {
+//                    KFImage(URL(string: viewModel.notification.profileImageUrl))
+//                        .resizable()
+//                        .scaledToFill()
+//                        .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+//                        .clipShape(Circle())
+//
+//                    Text(viewModel.notification.username)
+//                        .font(.system(size: 14, weight: .semibold))
+//
+//                    +
+//
+//                    Text(viewModel.notification.type.notificationMessage)
+//                        .font(.system(size: 15))
+//
+//                }
+//            }else if let user = viewModel.notification.user{
+//                    NavigationLink{
+//                        ProfileView(user: user)
+//                    } label: {
+//                        KFImage(URL(string: viewModel.notification.profileImageUrl))
+//                            .resizable()
+//                            .scaledToFill()
+//                            .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+//                            .clipShape(Circle())
+//
+//                        Text(viewModel.notification.username)
+//                            .font(.system(size: 14, weight: .semibold))
+//
+//                        +
+//
+//                        Text(viewModel.notification.type.notificationMessage)
+//                            .font(.system(size: 15))
+//
+//
+//                    }
+//                }
+//
+//            Text(" 4d")
+//                .foregroundColor(.gray)
+//                .font(.system(size: 12))
+            
             Spacer()
             
             if(viewModel.notification.type != .follow){
@@ -95,7 +133,8 @@ struct NotificationViewCell: View {
 }
 
 //struct NotificationViewCell_Previews: PreviewProvider {
+//
 //    static var previews: some View {
-//        NotificationViewCell()
+//        NotificationViewCell(notification: Notification(id: "", postId: "234", username: "test", profileImageUrl: "", timestamp: nil, type: .comment, uid: "", post: nil, user: nil, toWhom: nil, isFollowed: true))
 //    }
 //}

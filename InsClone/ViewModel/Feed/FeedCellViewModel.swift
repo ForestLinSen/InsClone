@@ -18,11 +18,7 @@ class FeedCellViewModel: ObservableObject{
     }
     
     var timestampString: String{
-        let formater = DateComponentsFormatter()
-        formater.allowedUnits = [.second, .minute, .hour, .day, .weekOfMonth]
-        formater.maximumUnitCount = 1
-        formater.unitsStyle = .abbreviated
-        return formater.string(from: post.timestamp.dateValue(), to: Date()) ?? "" // time difference
+        return convertTimeStamp(post.timestamp)
     }
     
     init(post: Post) {

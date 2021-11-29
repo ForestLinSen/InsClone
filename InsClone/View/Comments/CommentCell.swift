@@ -24,7 +24,14 @@ struct CommentCell: View {
                 .font(.system(size: 14, weight: .semibold)) +
                 Text(" \(comment.commentText)")
                 .font(.system(size: 14))
+            
+            Spacer()
+            
+            Text(" \(convertTimeStamp(comment.timestamp))")
+                .font(.system(size: 14))
+                .foregroundColor(.gray)
         }
+        .padding(.horizontal, 8)
         
         
     }

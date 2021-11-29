@@ -23,8 +23,10 @@ class NotificationCellViewModel: ObservableObject{
                 print("Debug: notification follow result: \(result)")
             }
         }
-        
-        
+    }
+    
+    var timestampString: String{
+        return convertTimeStamp(notification.timestamp)
     }
     
     func fetchPostNotification(){
