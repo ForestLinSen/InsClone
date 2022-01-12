@@ -12,7 +12,6 @@ struct CommentsView: View {
     @State var text: String
     @ObservedObject var viewModel: CommentViewModel
     
-    
     var body: some View {
         VStack{
             ScrollView{
@@ -27,10 +26,8 @@ struct CommentsView: View {
             .onTapGesture {
                 UIApplication.shared.endEditing()
             }
-            
             CustomInputView(inputText: $text, action: viewModel.uploadComment)
         }
-    
     }
 }
 
